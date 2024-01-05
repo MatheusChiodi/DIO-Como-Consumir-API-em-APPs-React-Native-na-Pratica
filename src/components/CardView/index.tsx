@@ -15,10 +15,20 @@ export default function CardView() {
     );
   };
 
+  const renderCarDetails = () => {
+    return (
+      <View style={{ alignItems: 'center' }}>
+        <Text style={styles.cardBrand}>Lamborghini</Text>
+        <Text style={styles.cardName}>Modelo</Text>
+      </View>
+    );
+  };
+
   return (
     <View style={styles.imageContainer}>
       {renderLogoBox()}
       <Divider />
+      {renderCarDetails()}
     </View>
   );
 }

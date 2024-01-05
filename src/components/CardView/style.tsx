@@ -20,4 +20,16 @@ export const styles = StyleSheet.create({
     width: '65%',
     resizeMode: 'contain',
   },
+  cardBrand: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: '400',
+    fontStyle: 'italic',
+  },
+  cardName: {
+    color: '#fff',
+    fontSize: 20,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
 });
