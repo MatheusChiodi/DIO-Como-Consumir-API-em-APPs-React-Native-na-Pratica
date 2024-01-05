@@ -32,4 +32,11 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
+  image: {
+    flex: 1,
+    marginBottom: 10,
+    width: '100%',
+    height: '100%',
+    resizeMode: 'contain',
+  },
 });
