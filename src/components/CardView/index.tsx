@@ -37,6 +37,16 @@ export default function CardView() {
     );
   };
 
+  const renderPrinceControls = () => {
+    return (
+      <View style={styles.priceLabelContainer}>
+        <Button title="<" color={'#01A6B3'} onPress={() => {}} />
+        <Text style={styles.priceLabel}>Valor</Text>
+        <Button title=">" color={'#01A6B3'} onPress={() => {}} />
+      </View>
+    );
+  };
+
   return (
     <View style={styles.imageContainer}>
       {renderLogoBox()}
@@ -47,6 +57,7 @@ export default function CardView() {
       <Divider />
 
       <BuyButton />
+      {renderPrinceControls()}
     </View>
   );
 }
