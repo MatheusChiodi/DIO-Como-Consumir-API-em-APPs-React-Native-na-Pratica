@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, Button, Image } from 'react-native';
 
 import { styles } from './style';
@@ -7,8 +7,18 @@ import Logo from '../../../assets/logo.png';
 import Divider from '../Divider';
 import { CAR_ASSETS_BASE_URL } from '../../constants/car';
 import BuyButton from '../BuyButton';
+import { CarModel } from './props';
+import { loadCarData } from './actions';
 
 export default function CardView() {
+  const [carData, setCarData] = useState<CarModel | null>(null);
+
+  useEffect(() => {
+    (async () => {
+      await loadCarData(1, setCarData);
+    })();
+  }, []);
+
   const renderLogoBox = () => {
     return (
       <View style={styles.logoContainer}>
