@@ -16,6 +16,7 @@ export default function CardView() {
   useEffect(() => {
     (async () => {
       await loadCarData(1, setCarData);
+      console.log(carData);
     })();
   }, []);
 
@@ -31,7 +32,7 @@ export default function CardView() {
     return (
       <View style={{ alignItems: 'center' }}>
         <Text style={styles.cardBrand}>Lamborghini</Text>
-        <Text style={styles.cardName}>Modelo</Text>
+        <Text style={styles.cardName}>{carData?.carName}</Text>
       </View>
     );
   };
@@ -41,7 +42,7 @@ export default function CardView() {
       <Image
         style={styles.image}
         source={{
-          uri: `${CAR_ASSETS_BASE_URL}1.png`,
+          uri: `${CAR_ASSETS_BASE_URL}${carData?.id}.png`,
         }}
       />
     );
@@ -51,7 +52,7 @@ export default function CardView() {
     return (
       <View style={styles.priceLabelContainer}>
         <Button title="<" color={'#01A6B3'} onPress={() => {}} />
-        <Text style={styles.priceLabel}>Valor</Text>
+        <Text style={styles.priceLabel}>{carData?.price}</Text>
         <Button title=">" color={'#01A6B3'} onPress={() => {}} />
       </View>
     );
